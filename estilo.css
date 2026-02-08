@@ -1,0 +1,179 @@
+/* ======== FUNDO E TEXTO ======== */
+body {
+    background: #050505;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* ======== HEADER ======== */
+header {
+    text-align: center;
+    padding: 30px 10px;
+    background: linear-gradient(90deg, #ffd700, #8b5a00);
+    box-shadow: 0 0 40px #ffe600;
+}
+
+/* LOGO */
+.logo {
+    width: 230px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 0 22px #ffe600);
+}
+
+/* Subtítulo */
+.sub {
+    color: #fff9c4;
+    font-size: 14px;
+    margin-top: -5px;
+    text-shadow: 0 0 10px #ffe600;
+}
+
+/* ======== MENU ======== */
+.menu {
+    text-align: center;
+    background: #0a0a0a;
+    padding: 15px;
+    border-top: 2px solid #302000;
+    border-bottom: 2px solid #302000;
+}
+
+.menu button {
+    background: #111;
+    color: #ffe600;
+    border: 1px solid #ffe600;
+    padding: 10px 15px;
+    margin: 6px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: .2s;
+    font-weight: bold;
+    text-shadow: 0 0 12px #ffe600;
+}
+
+.menu button:hover {
+    background: #ffe600;
+    color: #000;
+    box-shadow: 0 0 20px #ffe600;
+}
+
+/* ======== CATEGORIAS ======== */
+.categoria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 25px;
+}
+
+/* ======== ITEM ======== */
+.item {
+    background: #0b0b0b;
+    border: 1px solid #2c2100;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 0 15px #000;
+    transition: .3s;
+}
+
+.item:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 25px #ffe600;
+}
+
+/* IMAGENS DOS ITENS */
+.icon {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px #ffea00cc);
+}
+
+/* Nome e preço */
+.item h3 {
+    color: #ffe97a;
+    text-shadow: 0 0 10px #ffe600;
+}
+
+.item p {
+    color: #fff;
+}
+
+/* Botão Detalhes */
+.item button {
+    background: #ffe600;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    color: #000;
+    transition: .2s;
+}
+
+.item button:hover {
+    background: #fff066;
+    box-shadow: 0 0 18px #ffe600;
+}
+
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* NÃO ESCURECE O FUNDO */
+    background: transparent;
+
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* ===== CAIXA DA IMAGEM ===== */
+.modal-conteudo {
+    background: #0a0a0a; /* fundo escuro sólido */
+    padding: 15px;
+    border-radius: 12px;
+
+    /* brilho premium */
+    box-shadow:
+        0 0 15px #ffe600,
+        0 0 30px #ffe600aa,
+        0 0 55px #ffe60033;
+}
+
+/* ===== IMAGEM DO MODAL ===== */
+.modal-img {
+    width: 100%;
+    max-width: 450px;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* ===== BOTÃO FECHAR ===== */
+.fechar {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 45px;
+    cursor: pointer;
+    color: #ffe600;
+    text-shadow: 0 0 15px #ffe600;
+}
+
+/* ✨ BRILHO AMARELO EM VOLTA DA IMAGEM DO MODAL */
+.modal-img {
+    box-shadow:
+        0 0 15px #ffe600,
+        0 0 30px #ffe600aa,
+        0 0 60px #ffe60055;
+}

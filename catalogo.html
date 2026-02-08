@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Catálogo de Itens – MU Calliuws</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+<header>
+    <img src="logo/logo.png" class="logo">
+    <h1>CATÁLOGO DE ITENS – MU CALLIUWS</h1>
+    <p class="sub">Season 4 • Neon Premium Edition</p>
+</header>
+
+<!-- MENU -->
+<nav class="menu">
+    <button onclick="showCategory('grp0')">Swords</button>
+    <button onclick="showCategory('grp1')">Axes</button>
+    <button onclick="showCategory('grp2')">Maces</button>
+    <button onclick="showCategory('grp3')">Scepters</button>
+    <button onclick="showCategory('grp4')">Bows</button>
+    <button onclick="showCategory('grp5')">Staffs</button>
+    <button onclick="showCategory('grp6')">Shields</button>
+    <button onclick="showCategory('grp7')">Set</button>
+    <button onclick="showCategory('grp12')">Wings</button>
+    <button onclick="showCategory('grp13')">Pets</button>
+    <button onclick="showCategory('grp14')">Boxes/Jóias</button>
+    <button onclick="showCategory('grp15')">Rings/Pendants</button>
+    <button onclick="showCategory('grp16')">Kits</button>
+</nav>
+
+<!-- MODAL -->
+<div id="imgModal" class="modal">
+    <span class="fechar" onclick="closeImgModal()">&times;</span>
+    <img id="imgModalConteudo" class="modal-img">
+</div>
+
+<script src="nomes.js"></script>
+
+<script>
+// Lista de grupos
+const grupos = [0,1,2,3,4,5,6,7,12,13,14,15,16];
+
+// Gera itens de 1 até 50
+grupos.forEach(g => {
+    let section = document.createElement("section");
+    section.id = "grp" + g;
+    section.className = "categoria";
+
+    section.style.display = g === 0 ? "grid" : "none";
+
+    for (let i = 1; i <= 50; i++) {
+        section.innerHTML += `
+            <div class="item">
+                <img src="itens/${g}/${g}-${i}.png" class="icon">
+                <h3>${nomes[`${g}-${i}`] || `${g}-${i}`}</h3>
+                <p>Preço: —</p>
+                <button onclick="openImgModal('status/${g}-${i}.png')">DETALHES</button>
+            </div>
+        `;
+    }
+
+    document.body.appendChild(section);
+});
+
+// Trocar categoria
+function showCategory(cat){
+    document.querySelectorAll('.categoria').forEach(s => s.style.display = "none");
+    document.getElementById(cat).style.display = "grid";
+}
+
+// Abrir modal
+function openImgModal(imgSrc){
+    document.getElementById("imgModalConteudo").src = imgSrc;
+    document.getElementById("imgModal").style.display = "flex";
+}
+
+// Fechar modal
+function closeImgModal(){
+    document.getElementById("imgModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
